@@ -1,0 +1,97 @@
+<section class="{{view}}">
+    <mat-form-field appearance="standard">
+        <mat-label>Filtrar dados</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+
+    <div>
+        <span>Nível de interesse: </span>
+        <select class="form-control" (change)="viewFunction()" [formControl]="level">
+            <option selected disabled>Selecionar nível de interesse</option>
+            <option value="Não possui SASSEPE">Não possui SASSEPE</option>
+            <option value="Contratou com outro ADV">Contratou com outro ADV</option>
+            <option value="Outras ações">Outras ações</option>
+            <option value="Não tem interesse">Não tem interesse</option>
+            <option value="Mostrou pouco interesse">Mostrou pouco interesse</option>
+            <option value="Tem interesse em contratar">Tem interesse em contratar</option>
+            <option value="Afirmou que vai contratar">Afirmou que vai contratar</option>
+            <option value="Contratou">Contratou</option>
+        </select>
+
+        <span>Providencia: </span>
+        <select class="form-control" (change)="viewFunction()" [formControl]="prov">
+            <option selected disabled>Selecionar providencia tomada</option>
+            <option value="Não retornar ligação">Não retornar ligação</option>
+            <option value="Encaminhar para o IDESPE">Encaminhar para o IDESPE</option>
+            <option value="Enviar material diverso">Enviar material diverso</option>
+            <option value="Vídeo de convencimento">Vídeo de convencimento</option>
+            <option value="Vídeo de depoimentos">Vídeo de depoimentos</option>
+            <option value="Envio de notícia">Envio de notícia</option>
+            <option value="Envio de link para contratação">Envio de link para contratação</option>
+            <option value="Aguardar contratação (48h)">Aguardar contratação (48h)</option>
+            <option value="Aguardar contratação (72h)">Aguardar contratação (72h)</option>
+            <option value="Retornar ligação">Retornar ligação</option>
+        </select>
+        
+    </div>
+
+    <div *ngIf="levelFilter !== ''" class="optionsFilter">{{ levelFilter }} <mat-icon (click)="clearFilter('level')">close</mat-icon></div>
+    <div *ngIf="providenceFilter !== ''" class="optionsFilter">{{ providenceFilter }} <mat-icon (click)="clearFilter('prov')">close</mat-icon></div>
+
+    <div class="mat-elevation-z8 example-container">
+        <mat-progress-bar *ngIf="progress" mode="indeterminate"></mat-progress-bar>
+
+        <table mat-table [dataSource]="dataSource" matSort>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="cargo1">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Cargo 1 </th>
+                <td mat-cell *matCellDef="let row">
+                    <mat-icon matTooltip="{{row.LEVEL_INT ? row.LEVEL_INT : 'Sem Contato'}}">{{row.LEVEL_INT ? 'gavel' :
+                        'hourglass_bottom'}}</mat-icon>
+                    {{row.CARGO_1}}
+                </td>
+            </ng-container>
+
+            <!-- Progress Column -->
+            <ng-container matColumnDef="cargo2">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Cargo 2 </th>
+                <td mat-cell *matCellDef="let row"> {{row.CARGO_2}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nome </th>
+                <td mat-cell *matCellDef="let row"> {{row.NOME}} </td>
+            </ng-container>
+
+            <!-- Fruit Column -->
+            <ng-container matColumnDef="nasc">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nascimento </th>
+                <td mat-cell *matCellDef="let row"> {{row.NASC}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="cidade">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> </th>
+                <td mat-cell *matCellDef="let row"><span (click)="openModal(row)">
+                        <mat-icon style="cursor: pointer;">manage_search</mat-icon>
+                    </span> </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">Sem resultados</td>
+            </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[10, 20, 50, 100]"></mat-paginator>
+    </div>
+</section>
+
+<section *ngIf="view === 'false'">
+    <mat-spinner style="margin: auto; margin-top: 4rem;"></mat-spinner>
+    <h1>Carregando 6.237 itens.</h1>
+</section>

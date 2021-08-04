@@ -1,0 +1,134 @@
+::ng-deep .mat-drawer-container {
+    background-color: #f0f2f7;
+    color: rgba(0, 0, 0, .87);
+}
+
+.img-logo {
+    margin: auto;
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.mat-toolbar {
+    opacity: 1;
+    background: #ffffff;
+    color: rgba(0, 0, 0, .87);
+}
+
+.title {
+    text-align: left;
+    font: normal normal bold 24px/32px Poppins;
+    letter-spacing: 0.24px;
+    color: #636363;
+    opacity: 1;
+}
+
+/* .w-close {
+    width: 6% !important;
+    visibility: visible !important;
+    transform: none !important;
+} */
+
+.icon-close {
+    margin-top: -2rem;
+    left: 8%;
+    width: 39px !important;
+    text-align: left;
+    background-color: #00c8ff;
+    color: white;
+    border-radius: 100% !important;
+}
+
+.icon-open {
+    width: 39px !important;
+    color: white;
+    background-color: #00c8ff;
+    right: 1%;
+    border-radius: 100% !important;
+}
+
+.favorite-icon {
+    border-left: 1px solid #D9D9D9;
+    opacity: 1;
+}
+
+.user {
+    text-align: left;
+    font: normal normal normal 14px/32px Roboto;
+    letter-spacing: 0.14px;
+    color: #B7B7B7;
+    opacity: 1;
+}
+
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+a {
+    display: inline-block;
+    margin-left: 0.5rem;
+    text-align: left;
+    font: normal normal normal 14px/32px Roboto;
+    letter-spacing: 0.14px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.icon-menu {
+    font-size: 1.2rem;
+    color: #2751C3;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 80%;
+    margin: auto;
+    border: 0;
+    border-top: 1px solid #ffff;
+}
+
+.mat-icon-button {
+    padding: 0;
+    min-width: 0;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    line-height: 40px;
+    border-radius: 1%;
+}
+
+.mat-nav-list .mat-list-item {
+    cursor: pointer;
+    outline: none;
+    color: white;
+}
+
+.example-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    color: white;
+    background: #575757;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.div-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width:575px) {
+    .title {
+        font: normal normal bold 16px/27px Poppins;
+    }
+}

@@ -1,0 +1,129 @@
+<h2 mat-dialog-title>{{ itens.NOME }}
+    <mat-icon style="float: right;" mat-dialog-close (click)="onNoClick()">close</mat-icon>
+</h2>
+<mat-dialog-content class="mat-typography">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+
+                <small>Cargo 1</small>
+                <span>
+                    {{ itens.CARGO_1 ? itens.CARGO_1 : ''}}
+                </span>
+
+                <small>Cargo 2</small>
+                <span>
+                    {{ itens.CARGO_2 ? itens.CARGO_2 : '' }}
+                </span>
+
+                <small>Celular 1</small>
+                <span>
+                    {{ itens.CELULAR_1 ? itens.CELULAR_1 : '' }}
+                </span>
+
+                <small>Celular 2</small>
+                <span>
+                    {{ itens.CELULAR_2 ? itens.CELULAR_2 : '' }}
+                </span>
+
+            </div>
+            <div class="col-sm">
+
+                <small>Email</small>
+                <span>
+                    {{ itens.EMAIL_1 ? itens.EMAIL_1 : '' }}
+                </span>
+
+                <small>CPF</small>
+                <span>
+                    {{ itens.CPF ? itens.CPF : '' }}
+                </span>
+
+                <small>Nascimento</small>
+                <span>
+                    {{ itens.NASC ? itens.NASC : '' }}
+                </span>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+
+                <small>Nível de interesse</small>
+                <select class="form-control" [formControl]="level">
+                    <option selected disabled>Selecionar nível de interesse</option>
+                    <option value="Não possui SASSEPE">Não possui SASSEPE</option>
+                    <option value="Contratou com outro ADV">Contratou com outro ADV</option>
+                    <option value="Outras ações">Outras ações</option>
+                    <option value="Não tem interesse">Não tem interesse</option>
+                    <option value="Mostrou pouco interesse">Mostrou pouco interesse</option>
+                    <option value="Tem interesse em contratar">Tem interesse em contratar</option>
+                    <option value="Afirmou que vai contratar">Afirmou que vai contratar</option>
+                    <option value="Contratou">Contratou</option>
+                </select>
+            </div>
+            <div class="col-sm">
+
+                <small>Providencia a ser tomada</small>
+                <select class="form-control" [formControl]="prov">
+                    <option selected disabled>Selecionar providencia tomada</option>
+                    <option value="Não retornar ligação">Não retornar ligação</option>
+                    <option value="Encaminhar para o IDESPE">Encaminhar para o IDESPE</option>
+                    <option value="Enviar material diverso">Enviar material diverso</option>
+                    <option value="Vídeo de convencimento">Vídeo de convencimento</option>
+                    <option value="Vídeo de depoimentos">Vídeo de depoimentos</option>
+                    <option value="Envio de notícia">Envio de notícia</option>
+                    <option value="Envio de link para contratação">Envio de link para contratação</option>
+                    <option value="Aguardar contratação (48h)">Aguardar contratação (48h)</option>
+                    <option value="Aguardar contratação (72h)">Aguardar contratação (72h)</option>
+                    <option value="Retornar ligação">Retornar ligação</option>
+                </select>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions style="padding: 1rem;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+
+                <button mat-button class="submit form-control" type="button" (click)="putLevel()">Associar</button><br>
+
+            </div>
+            <div class="col-sm">
+
+                <button mat-button class="submit form-control" type="button" (click)="putProv()">Associar</button><br>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr>
+
+        <div class="row">
+            <div class="col-sm">
+
+                <small>Observação</small>
+                <div class="form-group">
+                    <textarea class="form-control" [formControl]="obs" rows="3"></textarea>
+                </div>
+                <button mat-button class="submit form-control" type="button" (click)="putObs()">Associar</button><br>
+
+            </div>
+
+        </div>
+    </div>
+</mat-dialog-actions>

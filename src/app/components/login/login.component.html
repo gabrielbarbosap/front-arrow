@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="col-10">
+            <form [formGroup]='fb' (ngSubmit)="onSubmit()">
+                <img src="../../../assets/images/Logos Menu Protótipo_Logo Dadosfera COmpleta.png" class="img-logo">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Login</mat-label>
+                    <input formControlName='email' matInput placeholder="Login">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Senha</mat-label>
+                    <input formControlName='password' type="password" matInput>
+
+                </mat-form-field>
+                <button class="submit" type="submit" [disabled]="!fb.valid">ENTRAR</button>
+
+            </form>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>

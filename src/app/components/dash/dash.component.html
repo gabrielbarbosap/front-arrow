@@ -1,0 +1,47 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="{{styleSide}}" [opened]="open" class="example-sidenav"
+        [ngClass]="{'w-close': open === false}">
+        <mat-nav-list class="mat-nav-list-header">
+            <mat-list-item style="margin-top: 1rem;">
+                <img src="../../../assets/images/Logos Menu Protótipo_Logo Dadosfera COmpleta.png" class="img-logo">
+              
+            </mat-list-item>
+            <div style="margin-top: 9rem;">
+                <mat-list-item routerLink="coletix/pipelines">
+                    <a>SASSEP</a>
+                </mat-list-item>
+
+            </div>
+            <div class="div-footer">
+                <hr>
+                <!-- <mat-list-item>
+                    <mat-icon>report</mat-icon> <a href="">configuração</a>
+                </mat-list-item> -->
+                <mat-list-item>
+                    <mat-icon>logout</mat-icon> <a (click)="logout()">logout</a>
+                </mat-list-item>
+            </div>
+
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <button *ngIf="!open" (click)="openNav()" mat-icon-button class="example-icon icon-open">
+                <mat-icon> chevron_right
+                </mat-icon>
+            </button>
+            <span class="title">{{title}}</span>
+            <!-- <span class="example-spacer"></span>
+            <button mat-icon-button class="example-icon favorite-icon">
+                <mat-icon class="icon-menu"> notification_important</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon class="icon-menu">manage_accounts</mat-icon>
+            </button>
+            <span class="user">Gabriel</span> -->
+        </mat-toolbar>
+
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

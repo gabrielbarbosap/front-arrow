@@ -1,0 +1,23 @@
+h2 {
+    padding: 1rem;
+    background: #2751C3 0% 0% no-repeat padding-box;
+    border: 1px solid #2751C2;
+    border-radius: 4px 4px 0px 0px;
+    opacity: 1;
+    text-align: left;
+    font: normal normal normal 14px/20px Roboto;
+    letter-spacing: 1.4px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.table thead th {
+    font-weight: normal;
+    vertical-align: bottom;
+    color: white;
+    border-bottom: 2px solid #dee2e6;
+}
+
+mat-dialog-content {
+    margin: 0.1rem;
+}

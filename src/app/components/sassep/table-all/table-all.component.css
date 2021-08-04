@@ -1,0 +1,51 @@
+h2 {
+    padding: 1rem;
+    background: #575757;
+    border: 1px solid #575757;
+    border-radius: 4px 4px 0px 0px;
+    opacity: 1;
+    text-align: left;
+    font: normal normal normal 14px/20px Roboto;
+    letter-spacing: 1.4px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+span, small {
+ display: block;
+}
+
+small {
+    text-align: left;
+    font: normal normal bold 14px/32px Poppins;
+    letter-spacing: 0.24px;
+    color: #636363;
+    opacity: 1;
+}
+
+mat-dialog-content, mat-dialog-actions {
+    margin: 0.1rem;
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0;
+    height: auto;
+}
+
+.submit {
+    border-radius: 5px;
+    cursor: pointer;
+    color: #f8f9fa;
+    padding: 0;
+    border: none;
+    margin: auto;
+    margin-top: 1rem;
+    height: auto;
+    width: 6rem;
+    background-color: #636363;
+}
+
+button:hover{
+    background-color: #c5c5c5;
+    color: black;
+}

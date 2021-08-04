@@ -1,0 +1,45 @@
+.example-right-align {
+    text-align: right;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.example-right-align {
+    -moz-appearance: textfield;
+}
+
+img {
+    display: block;
+    width: 35%;
+    margin: 12px auto;
+}
+
+.submit {
+    border-radius: 5px;
+    color: #f8f9fa;
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    float: right;
+    background-color: #17a2b8;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #FFFFFF;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
